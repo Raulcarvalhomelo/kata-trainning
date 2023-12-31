@@ -4,19 +4,34 @@
 // }
 
 
-function rps(p1, p2) {
-    const opcoes = ["rock", "paper", "scissors"];
+// function rps(p1, p2) {
+//     const opcoes = ["rock", "paper", "scissors"];
 
-    if (p1 == p2) {
-        return "Draw";
-    }
+//     if (p1 == p2) {
+//         return "Draw";
+//     }
 
-    if (opcoes.indexOf(p1) !== -1 && opcoes.indexOf(p2)!== -1) {
-        return (opcoes.indexOf(p1) + 1) % 3 === opcoes.indexOf(p2) ? "Player 2 won!" : "Player 1 won!";
-    } else {
-        return "Escolha inválida! Por favor, escolha entre rock, paper ou scissors.";
+//     if (opcoes.indexOf(p1) !== -1 && opcoes.indexOf(p2)!== -1) {
+//         return (opcoes.indexOf(p1) + 1) % 3 === opcoes.indexOf(p2) ? "Player 2 won!" : "Player 1 won!";
+//     } else {
+//         return "Escolha inválida! Por favor, escolha entre rock, paper ou scissors.";
+//     }
+// }
+function rps(p1,p2){
+    const rules={rock:'scissors', paper:'rock', scissors:'paper'}
+    if (p1===p2){
+        return 'Draw'
     }
+    if (p1===rules[p2]){
+        return 'Player 2 won!'
+    }
+    else{
+        return 'Player 1 won!'
+    }
+    
 }
+
+
 console.log(rps("rock", "scissors"))
 console.log(rps("scissors", "scissors"))
 console.log(rps("paper", "scissors"))
