@@ -7,15 +7,12 @@
 function rps(p1, p2) {
     const opcoes = ["rock", "paper", "scissors"];
 
-    if (p1 === p2) {
+    if (p1 == p2) {
         return "Draw";
     }
 
-    const indiceP1 = opcoes.indexOf(p1);
-    const indiceP2 = opcoes.indexOf(p2);
-
-    if (indiceP1 !== -1 && indiceP2 !== -1) {
-        return (indiceP1 + 1) % 3 === indiceP2 ? "Player 2 won!" : "Player 1 won!";
+    if (opcoes.indexOf(p1) !== -1 && opcoes.indexOf(p2)!== -1) {
+        return (opcoes.indexOf(p1) + 1) % 3 === opcoes.indexOf(p2) ? "Player 2 won!" : "Player 1 won!";
     } else {
         return "Escolha inválida! Por favor, escolha entre rock, paper ou scissors.";
     }
